@@ -1,0 +1,9 @@
+.mainContent {
+    background-color: #1c1c1c;
+    min-height: 300vh;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}

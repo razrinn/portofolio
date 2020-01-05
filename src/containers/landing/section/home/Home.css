@@ -1,0 +1,68 @@
+.content {
+    z-index: 10;
+    position: relative;
+}
+
+.orangeBox {
+    position: absolute;
+    right: -10px;
+    top: -8vh;
+    z-index: 0;
+    width: 24vw;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.blueLine {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.linkedin {
+    margin-right: 1.5rem;
+}
+
+.description {
+    margin-top: 3rem;
+    color: white;
+    line-height: 3;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #0094C6;
+}
+
+.profilePictureContainer {
+    height: 100%;
+    padding-left: 4rem;
+}
+
+.profilePicture {
+    height: 100%;
+}
+
+.watermarkHome {
+    top: 20%;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Handphone */
+@media only screen and (max-width: 500px) {}
+
+/* Medium screen */
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    .orangeBox {
+        width: 30vw;
+        height: 85vh;
+    }
+}
+
+/* Medium screen */
+@media only screen and (width: 1440px) {
+    .orangeBox {
+        width: 25vw;
+        height: 78vh;
+    }
+}

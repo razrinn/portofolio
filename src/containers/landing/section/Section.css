@@ -1,0 +1,13 @@
+.sectionWrapper {
+    position: relative;
+}
+
+.headline {
+    color: white;
+}
+
+.watermark {
+    color: rgba(255, 255, 255, 0.05);
+    font-size: 21rem;
+    font-weight: bold;
+}
