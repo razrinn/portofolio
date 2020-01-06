@@ -1,0 +1,67 @@
+.titleAbout {
+    font-size: 3rem;
+}
+
+.backgroundContainer {
+    overflow-y: auto;
+    height: 500px;
+}
+
+.backgroundList {
+    padding-left: 3rem;
+    margin-left: 1rem;
+    list-style: none;
+    border-left: 2px solid white;
+}
+
+.backgroundItem {
+    position: relative;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid white;
+    padding-bottom: 2rem;
+}
+
+.backgroundItem::after {
+    content: '';
+    position: absolute;
+    top: -0.7rem;
+    left: -3.6rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    content: '\25CF';
+    font-size: 30px;
+    color: #1c1c1c;
+}
+
+.buttonBackground {
+    padding: 0.75rem 1rem;
+    margin: 0.5rem;
+    background-color: transparent;
+    border: none;
+    transition: all 0.2s linear;
+}
+
+.buttonBackground:active {
+    border: none;
+}
+
+.buttonBackground.active {
+    background-color: #ED6A5A;
+    color: white;
+}
+
+.buttonBackground.active:disabled {
+    color: grey;
+}
+
+.buttonBackground.active::before {
+    content: "";
+    height: 70%;
+    width: 90%;
+    border-left: 2px solid #ED6A5A;
+    border-top: 2px solid #ED6A5A;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

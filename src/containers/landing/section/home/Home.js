@@ -11,17 +11,16 @@ import { Container, Row, Col } from 'react-bootstrap';
 const Home = () => {
     return (
         <section id='home' className='sectionWrapper'>
-            <h1 className='watermark watermarkHome'>who I am</h1>
             <Container className='sectionWrapper'>
                 <img src={OrangeBox} className='orangeBox' alt='orange box' />
-                <div className="content">
+                <div className="contentHome">
                     <h1 className='headline display-3 font-weight-bold py-5'>Growing Student, Software Engineer, Web Developer, Casual Gamer, and Movie Enthusiast</h1>
                 </div>
                 <Row>
                     <Col md={1}>
                         <img src={BlueLine} className='blueLine' alt="blue line" />
                     </Col>
-                    <Col md={6}>
+                    <Col md={6} className='socialList'>
                         <span>
                             <a target='_blank' rel='noopener noreferrer' href="https://www.linkedin.com/in/razrinn">
                                 <img src={LinkedIn} className='linkedin' alt="linkedin" />
@@ -44,6 +43,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
+            <h1 className='watermark watermarkHome'>who I am</h1>
         </section>
     );
 };

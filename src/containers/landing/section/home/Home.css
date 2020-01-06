@@ -1,4 +1,8 @@
-.content {
+#home {
+    margin-bottom: 2rem;
+}
+
+.contentHome {
     z-index: 10;
     position: relative;
 }
@@ -20,6 +24,7 @@
 
 .linkedin {
     margin-right: 1.5rem;
+    z-index: 5;
 }
 
 .description {
@@ -45,7 +50,11 @@
 .watermarkHome {
     top: 20%;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
+}
+
+.socialList {
+    z-index: 10;
 }
 
 /* Handphone */
@@ -59,7 +68,7 @@
     }
 }
 
-/* Medium screen */
+/* Large screen */
 @media only screen and (width: 1440px) {
     .orangeBox {
         width: 25vw;

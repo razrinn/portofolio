@@ -11,3 +11,17 @@
     font-size: 21rem;
     font-weight: bold;
 }
+
+/* Medium screen */
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    .watermark {
+        font-size: 18rem;
+    }
+}
+
+/* Medium screen */
+@media only screen and (width: 1440px) {
+    .watermark {
+        font-size: 20rem;
+    }
+}

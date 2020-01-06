@@ -5,7 +5,7 @@ import './Navbar.css'
 
 const Header = () => {
     return (
-        <Navbar sticky='top'>
+        <Navbar>
             <Container>
                 <Navbar.Brand href="/">
                     <img
@@ -19,9 +19,9 @@ const Header = () => {
                 <Navbar.Collapse>
                     <Nav className="ml-auto">
                         <Nav.Link href="#home">HOME</Nav.Link>
-                        <Nav.Link href="#link">ABOUT</Nav.Link>
-                        <Nav.Link href="#link">WORK</Nav.Link>
-                        <Nav.Link href="#link">CONTACT</Nav.Link>
+                        <Nav.Link href="#about">ABOUT</Nav.Link>
+                        <Nav.Link href="#work">WORK</Nav.Link>
+                        <Nav.Link href="#contact">CONTACT</Nav.Link>
                         <Nav.Link href="#link">BLOG</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
