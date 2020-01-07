@@ -1,0 +1,36 @@
+.cardContainer {
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border-radius: 0;
+    border: 2px solid #FFF8F0;
+    color: white;
+}
+
+.cardImage {
+    background-color: #FFF8F0;
+    padding: 1rem 0.5rem;
+    width: 100%;
+}
+
+.buttonPortfolio {
+    color: #0094C6;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #FFF8F0;
+    border: none;
+    transition: all 0.15s linear;
+}
+
+.buttonPortfolio:hover {
+    background-color: rgb(184, 179, 173);
+
+}
+
+.buttonPortfolio.active {
+    background-color: #0094C6;
+    color: white;
+}
+
+.buttonPortfolio.active:disabled {
+    color: grey;
+}

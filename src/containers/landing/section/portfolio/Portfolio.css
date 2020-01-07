@@ -1,0 +1,27 @@
+.orangeBoxPortfolio {
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.workContainer {
+    z-index: 10;
+}
+
+.watermarkPortfolio {
+    position: absolute;
+    top: 80vh;
+    z-index: 1;
+}
+
+.contentPortfolio {
+    padding-top: 8rem;
+}
+
+.loadingPortfolio {
+    height: 60vh;
+    width: 100%;
+}

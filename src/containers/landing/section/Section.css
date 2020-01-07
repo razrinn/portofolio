@@ -2,26 +2,30 @@
     position: relative;
 }
 
+.titleSection {
+    font-size: 3rem;
+}
+
 .headline {
     color: white;
 }
 
 .watermark {
     color: rgba(255, 255, 255, 0.05);
-    font-size: 21rem;
+    font-size: 20rem;
     font-weight: bold;
 }
 
 /* Medium screen */
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
     .watermark {
-        font-size: 18rem;
+        font-size: 16rem;
     }
 }
 
 /* Medium screen */
 @media only screen and (width: 1440px) {
     .watermark {
-        font-size: 20rem;
+        font-size: 18rem;
     }
 }

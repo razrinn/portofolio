@@ -141,9 +141,9 @@ const About = () => {
         setActive(background);
     };
     return (
-        <section className='sectionWrapper'>
+        <section className='about sectionWrapper'>
             <h1 className='watermark watermarkAbout'>what <br /> I <br /> do</h1>
-            <img src={BlueBox} className='blueBox' alt='orange box' />
+            <img src={BlueBox} className='blueBox' alt='blue box' />
             <Container className='sectionWrapper'>
                 <div className="contentAbout">
                     <Row id="about" className='justify-content-between'>
@@ -173,7 +173,7 @@ const About = () => {
                             </Row>
                         </Col>
                         <Col md={3}>
-                            <p className='text-white text-justify'>
+                            <p className='text-white text-justify openSans'>
                                 Ray Azrin Karim is a 19-year-old law student whose life is dominated by solving the murder of his friend, Harmony Knight. Harmony was suffocated in 2012 and the killer was never brought to justice.
                                 <br />
                                 He is an Indonesia Muslim who defines himself as straight. He is currently at college. studying law.

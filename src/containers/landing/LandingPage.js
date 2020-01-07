@@ -3,6 +3,7 @@ import Header from '../../components/navbar/Header';
 import './LandingPage.css';
 import Home from './section/home/Home';
 import About from './section/about/About';
+import Portfolio from './section/portfolio/Portfolio';
 
 const LandingPage = () => {
     return (
@@ -10,6 +11,7 @@ const LandingPage = () => {
             <Header />
             <Home />
             <About />
+            <Portfolio />
         </div>
     )
 };
