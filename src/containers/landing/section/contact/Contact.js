@@ -8,9 +8,10 @@ import Website from '../../../../assets/landing/contact/website.svg';
 import WhiteCircle from '../../../../assets/landing/contact/white-circle.svg';
 import ContactInfo from '../../../../components/contact/ContactInfo';
 import Message from '../../../../components/contact/Message';
+import Loader from 'react-loader-spinner';
 
 
-const Contact = ({ ref }) => {
+const Contact = () => {
 
     const [newMessage, setNewMessage] = React.useState({
         fullName: '',
@@ -22,42 +23,25 @@ const Contact = ({ ref }) => {
     const [messages, setMessages] = React.useState([
         {
             id: 1,
-            fullName: 'Ray Azrin Karim',
-            email: 'rayazrin19@gmail.com',
-            message: 'kren bgt brooo',
-            date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+            fullName: 'John Doe',
+            email: 'johndoe@mail.com',
+            message: 'Keren websitenya kak',
+            // date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+            date: 'Thursday, January 9, 2020'
         },
         {
             id: 2,
-            fullName: 'Ray Azrin Karim',
-            email: 'rayazrin19@gmail.com',
-            message: 'kren bgt brooo',
-            date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+            fullName: 'Jane Doe',
+            email: 'janedoe@mail.com',
+            message: 'Masih suka bingung',
+            // date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+            date: 'Thursday, January 9, 2020'
         },
-        {
-            id: 3,
-            fullName: 'Ray Azrin Karim',
-            email: 'rayazrin19@gmail.com',
-            message: 'kren bgt brooo',
-            date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-        },
-        {
-            id: 4,
-            fullName: 'Ray Azrin Karim',
-            email: 'rayazrin19@gmail.com',
-            message: 'Keren lo bro Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi facilis molestias, perferendis sit, neque doloremque, optio beatae unde officiis qui numquam recusandae sint laboriosam fuga eum laudantium explicabo facere veniam.',
-            date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-        },
-        {
-            id: 5,
-            fullName: 'Ray Azrin Karim',
-            email: 'rayazrin19@gmail.com',
-            message: 'Keren lo bro Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi facilis molestias, perferendis sit, neque doloremque, optio beatae unde officiis qui numquam recusandae sint laboriosam fuga eum laudantium explicabo facere veniam.',
-            date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-        }
     ]);
 
     const [isAnonymous, setIsAnonymous] = React.useState(false);
+
+    const [isSending, setIsSending] = React.useState(false);
 
     const contacts = [
         {
@@ -94,6 +78,7 @@ const Contact = ({ ref }) => {
     };
 
     const handleSend = () => {
+        setIsSending(true);
         const msg = {
             fullName: isAnonymous ? 'John Doe' : newMessage.fullName,
             email: isAnonymous ? 'johndoe@mail.com' : newMessage.email,
@@ -101,10 +86,21 @@ const Contact = ({ ref }) => {
             date: new Date()
         }
         // TODO POST to API
+    };
+
+    const handleCloseSend = () => {
+        setIsSending(false);
+        setIsAnonymous(false);
+        setNewMessage({
+            fullName: '',
+            email: '',
+            message: '',
+            date: ''
+        });
     }
 
     return (
-        <section ref={ref} className="pb-5 overflow-hidden contact sectionWrapper">
+        <section className="pb-5 overflow-hidden contact sectionWrapper">
             <img src={WhiteCircle} className='whiteCircle' alt='white circle' />
             <Container>
                 <h2 id='contact' className='text-white titleSection mb-4'>Send me a message</h2>
@@ -116,64 +112,82 @@ const Contact = ({ ref }) => {
                             ))
                         }
                         <p className='divider mb-4'>or</p>
-                        <Form.Group className='position-relative'>
-                            <Form.Control
-                                className='form'
-                                size="lg"
-                                type="text"
-                                required
-                                name='fullName'
-                                maxLength={20}
-                                value={newMessage.fullName}
-                                onChange={handleChange}
-                                disabled={isAnonymous}
-                            />
-                            <span className={isAnonymous ? 'formLabel disabled' : 'formLabel'}>Fullname</span>
-                        </Form.Group>
-                        <Form.Group className='position-relative'>
-                            <Form.Control
-                                className='form'
-                                size="lg"
-                                type="text"
-                                required
-                                name='email'
-                                value={newMessage.email}
-                                onChange={handleChange}
-                                disabled={isAnonymous}
-                                maxLength={32}
-                            />
-                            <span className={isAnonymous ? 'formLabel disabled' : 'formLabel'}>Email Address</span>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Check
-                                type="switch"
-                                id="custom-switch"
-                                label="Go Anonymous"
-                                checked={isAnonymous}
-                                onChange={handleAnonymous}
-                            />
-                        </Form.Group>
-                        <Form.Group className='position-relative'>
-                            <Form.Control
-                                className='form'
-                                as="textarea"
-                                size='lg'
-                                rows="3"
-                                required
-                                name='message'
-                                value={newMessage.message}
-                                onChange={handleChange}
-                            />
-                            <span className='formLabel'>Message</span>
-                        </Form.Group>
-                        <button className='buttonContact' onClick={handleSend}>SEND</button>
+                        {
+                            isSending
+                                ?
+                                <div className='d-flex justify-content-center'>
+                                    <div className='w-50'>
+                                        <Loader className='text-center' type="Triangle" color="#ffffff" />
+                                        <p className='mt-3 text-center text-white font-weight-bold'>Your message is being sent and waiting approval from the author</p>
+                                        <p className='text-center'><span className='backButton' onClick={handleCloseSend}>Back</span></p>
+                                    </div>
+                                </div>
+                                :
+                                <>
+                                    <Form.Group className='position-relative'>
+                                        <Form.Control
+                                            className='form'
+                                            size="lg"
+                                            type="text"
+                                            required
+                                            name='fullName'
+                                            maxLength={20}
+                                            value={newMessage.fullName}
+                                            onChange={handleChange}
+                                            disabled={isAnonymous}
+                                        />
+                                        <span className={isAnonymous ? 'formLabel disabled' : 'formLabel'}>Fullname</span>
+                                    </Form.Group>
+                                    <Form.Group className='position-relative'>
+                                        <Form.Control
+                                            className='form'
+                                            size="lg"
+                                            type="text"
+                                            required
+                                            name='email'
+                                            value={newMessage.email}
+                                            onChange={handleChange}
+                                            disabled={isAnonymous}
+                                            maxLength={32}
+                                        />
+                                        <span className={isAnonymous ? 'formLabel disabled' : 'formLabel'}>Email Address</span>
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Check
+                                            type="switch"
+                                            id="custom-switch"
+                                            label="Go Anonymous"
+                                            checked={isAnonymous}
+                                            onChange={handleAnonymous}
+                                        />
+                                    </Form.Group>
+                                    <Form.Group className='position-relative'>
+                                        <Form.Control
+                                            className='form'
+                                            as="textarea"
+                                            size='lg'
+                                            rows="3"
+                                            required
+                                            name='message'
+                                            value={newMessage.message}
+                                            onChange={handleChange}
+                                        />
+                                        <span className='formLabel'>Message</span>
+                                    </Form.Group>
+                                    <button className='buttonContact' onClick={handleSend}>SEND</button>
+                                </>
+                        }
                     </Col>
                     <Col md={6}>
                         <div className='messagesContainer'>
                             {
-                                messages.map(item => (
-                                    <Message key={item.id} fullName={item.fullName} email={item.email} message={item.message} date={item.date} />
-                                ))
+                                messages.length > 0
+                                    ?
+                                    messages.map(item => (
+                                        <Message key={item.id} fullName={item.fullName} email={item.email} message={item.message} date={item.date} />
+                                    ))
+                                    :
+                                    <p className='text-center text-white'>No approved message yet. Send me a message.</p>
                             }
                         </div>
                     </Col>

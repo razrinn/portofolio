@@ -6,17 +6,16 @@ import PortfolioCard from '../../../../components/portfolio/PortfolioCard';
 import Pagination from '../../../../components/portfolio/Pagination';
 import Loader from 'react-loader-spinner';
 
-const Portfolio = ({ ref }) => {
+const Portfolio = () => {
     const [portfolios, setPortfolios] = React.useState([
-        0,
-        1,
-        2,
-        12,
-        12,
-        12,
-        12,
-        12,
-        12,
+        {
+            id: 1,
+            title: 'Tokopedia-UI AI Center Fasilkom UI',
+            description: 'Develop website front-end consist of company profile, blog, and board member',
+            private: false,
+            url: 'https://tokopedia-ai.cs.ui.ac.id',
+            imageUrl: 'https://i.ibb.co/gFzmdRR/tokpedai.png'
+        },
     ]);
     const [currentPage, setCurrentPage] = React.useState(0);
     React.useEffect(() => {
@@ -35,7 +34,7 @@ const Portfolio = ({ ref }) => {
         setCurrentPage(currentPage + 1);
     }
     return (
-        <section ref={ref} className="portfolio sectionWrapper">
+        <section className="portfolio sectionWrapper">
             <h1 className='watermark watermarkPortfolio'>what I did</h1>
             <img src={OrangeBox} className='orangeBoxPortfolio' alt='orange box' />
             <Container className='workContainer sectionWrapper'>
@@ -85,8 +84,15 @@ const Portfolio = ({ ref }) => {
                                     <Loader type="Triangle" color="#ffffff" />
                                 </div>
                                 :
-                                currentPortofolios.map((porto, index) => (
-                                    <PortfolioCard key={index} idx={porto} />
+                                currentPortofolios.map(porto => (
+                                    <PortfolioCard
+                                        key={porto.id}
+                                        title={porto.title}
+                                        description={porto.description}
+                                        private={porto.private}
+                                        url={porto.url}
+                                        imageUrl={porto.imageUrl}
+                                    />
                                 ))
                         }
                     </Row>

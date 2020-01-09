@@ -141,3 +141,8 @@ textarea {
     bottom: 0;
     right: 25%;
 }
+
+.backButton {
+    cursor: pointer;
+    color: #0094C6;
+}

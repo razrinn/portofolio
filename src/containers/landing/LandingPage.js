@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './LandingPage.css';
 import Home from './section/home/Home';
 import About from './section/about/About';

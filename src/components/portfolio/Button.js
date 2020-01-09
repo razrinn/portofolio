@@ -6,7 +6,7 @@ const Button = props => {
         window.open(link, '_blank');
     }
     return (
-        <button className='buttonPortfolio' disabled={props.disabled} onClick={() => handleClick('http://google.com')}>
+        <button className='buttonPortfolio' disabled={props.disabled} onClick={() => handleClick(props.url)}>
             {props.children}
         </button>
     );
