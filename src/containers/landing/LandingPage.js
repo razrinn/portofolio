@@ -8,7 +8,7 @@ import Contact from './section/contact/Contact';
 
 const LandingPage = () => {
     return (
-        <div className='mainContent'>
+        <div className='mainContentLanding'>
             <Header />
             <Home />
             <About />

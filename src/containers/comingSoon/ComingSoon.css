@@ -1,0 +1,28 @@
+.mainContentComing {
+    height: 100vh;
+}
+
+.comingSoonAsset {
+    position: absolute;
+    bottom: 0;
+    width: 65%;
+}
+
+.comingSoonText {
+    width: 25%;
+    color: #0094C6;
+}
+
+/* Medium screen */
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    .comingSoonAsset {
+        width: 75%;
+    }
+}
+
+/* Large screen */
+@media only screen and (width: 1440px) {
+    .comingSoonAsset {
+        width: 70%;
+    }
+}

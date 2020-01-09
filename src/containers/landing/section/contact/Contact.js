@@ -93,6 +93,16 @@ const Contact = () => {
         setIsAnonymous(!isAnonymous);
     };
 
+    const handleSend = () => {
+        const msg = {
+            fullName: isAnonymous ? 'John Doe' : newMessage.fullName,
+            email: isAnonymous ? 'johndoe@mail.com' : newMessage.email,
+            message: newMessage.message,
+            date: new Date()
+        }
+        // TODO POST to API
+    }
+
     return (
         <section className="pb-5 overflow-hidden contact sectionWrapper">
             <img src={WhiteCircle} className='whiteCircle' alt='white circle' />
