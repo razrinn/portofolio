@@ -10,7 +10,7 @@ import ContactInfo from '../../../../components/contact/ContactInfo';
 import Message from '../../../../components/contact/Message';
 
 
-const Contact = () => {
+const Contact = ({ ref }) => {
 
     const [newMessage, setNewMessage] = React.useState({
         fullName: '',
@@ -104,7 +104,7 @@ const Contact = () => {
     }
 
     return (
-        <section className="pb-5 overflow-hidden contact sectionWrapper">
+        <section ref={ref} className="pb-5 overflow-hidden contact sectionWrapper">
             <img src={WhiteCircle} className='whiteCircle' alt='white circle' />
             <Container>
                 <h2 id='contact' className='text-white titleSection mb-4'>Send me a message</h2>
@@ -166,7 +166,7 @@ const Contact = () => {
                             />
                             <span className='formLabel'>Message</span>
                         </Form.Group>
-                        <button className='buttonContact'>SEND</button>
+                        <button className='buttonContact' onClick={handleSend}>SEND</button>
                     </Col>
                     <Col md={6}>
                         <div className='messagesContainer'>

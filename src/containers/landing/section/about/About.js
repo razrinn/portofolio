@@ -9,7 +9,7 @@ import Loader from 'react-loader-spinner';
 
 
 
-const About = () => {
+const About = ({ ref }) => {
     const [active, setActive] = React.useState('education');
     React.useEffect(() => {
         switch (active) {
@@ -141,7 +141,7 @@ const About = () => {
         setActive(background);
     };
     return (
-        <section className='about sectionWrapper'>
+        <section ref={ref} className='about sectionWrapper'>
             <h1 className='watermark watermarkAbout'>what <br /> I <br /> do</h1>
             <img src={BlueBox} className='blueBox' alt='blue box' />
             <Container className='sectionWrapper'>

@@ -18,10 +18,10 @@ const Header = () => {
                 </Navbar.Brand>
                 <Navbar.Collapse>
                     <Nav className="ml-auto">
-                        <Nav.Link href="/#">HOME</Nav.Link>
-                        <Nav.Link href="/#about">ABOUT</Nav.Link>
+                        <Nav.Link href="/">HOME</Nav.Link>
+                        {/* <Nav.Link href="/#about">ABOUT</Nav.Link>
                         <Nav.Link href="/#work">WORK</Nav.Link>
-                        <Nav.Link href="/#contact">CONTACT</Nav.Link>
+                        <Nav.Link href="/#contact">CONTACT</Nav.Link> */}
                         <Nav.Link href="/blog">BLOG</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

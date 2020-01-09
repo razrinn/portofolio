@@ -6,7 +6,7 @@ import PortfolioCard from '../../../../components/portfolio/PortfolioCard';
 import Pagination from '../../../../components/portfolio/Pagination';
 import Loader from 'react-loader-spinner';
 
-const Portfolio = () => {
+const Portfolio = ({ ref }) => {
     const [portfolios, setPortfolios] = React.useState([
         0,
         1,
@@ -35,7 +35,7 @@ const Portfolio = () => {
         setCurrentPage(currentPage + 1);
     }
     return (
-        <section className="portfolio sectionWrapper">
+        <section ref={ref} className="portfolio sectionWrapper">
             <h1 className='watermark watermarkPortfolio'>what I did</h1>
             <img src={OrangeBox} className='orangeBoxPortfolio' alt='orange box' />
             <Container className='workContainer sectionWrapper'>

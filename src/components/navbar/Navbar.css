@@ -13,3 +13,28 @@
 .navbar-light .navbar-nav .nav-link:hover {
     color: black;
 }
+
+.sidebar {
+    position: fixed;
+    top: calc(50% - 1.5rem*4);
+    right: 2vw;
+    z-index: 1000;
+}
+
+.sidebarDot {
+    text-decoration: none !important;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sidebarDot:hover {
+    font-size: 1.5rem;
+    color: #0094C6;
+}
+
+.sidebarDot.active {
+    font-size: 2.5rem;
+    color: #0094C6;
+}

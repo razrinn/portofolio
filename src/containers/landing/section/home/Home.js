@@ -10,9 +10,9 @@ import Gitlab from '../../../../assets/landing/home/gitlab.svg';
 import ProfilePicture from '../../../../assets/landing/home/ray.jpg';
 import { Container, Row, Col } from 'react-bootstrap';
 
-const Home = () => {
+const Home = ({ ref }) => {
     return (
-        <section id='home' className='sectionWrapper'>
+        <section id='home' ref={ref} className='sectionWrapper'>
             <Container className='sectionWrapper'>
                 <img src={OrangeBox} className='orangeBox' alt='orange box' />
                 <div className="contentHome">
