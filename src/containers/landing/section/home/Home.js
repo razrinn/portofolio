@@ -5,6 +5,8 @@ import OrangeBox from '../../../../assets/landing/home/orange-box.svg';
 import BlueLine from '../../../../assets/landing/home/blue-line.svg';
 import LinkedIn from '../../../../assets/landing/home/linkedin.svg';
 import Instagram from '../../../../assets/landing/home/instagram.svg';
+import Github from '../../../../assets/landing/home/github.svg';
+import Gitlab from '../../../../assets/landing/home/gitlab.svg';
 import ProfilePicture from '../../../../assets/landing/home/ray.jpg';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -23,10 +25,16 @@ const Home = () => {
                     <Col md={6} className='socialList'>
                         <span>
                             <a target='_blank' rel='noopener noreferrer' href="https://www.linkedin.com/in/razrinn">
-                                <img src={LinkedIn} className='linkedin' alt="linkedin" />
+                                <img src={LinkedIn} className='socialIcon' alt="linkedin" />
                             </a>
                             <a target='_blank' rel='noopener noreferrer' href="https://www.instagram.com/razrinn">
-                                <img src={Instagram} className='instagram' alt="instagram" />
+                                <img src={Instagram} className='socialIcon' alt="instagram" />
+                            </a>
+                            <a target='_blank' rel='noopener noreferrer' href="https://github.com/razrinn">
+                                <img src={Github} className='socialIcon' alt="github" />
+                            </a>
+                            <a target='_blank' rel='noopener noreferrer' href="https://gitlab.com/razrinn">
+                                <img src={Gitlab} className='socialIcon' alt="gitlab" />
                             </a>
                         </span>
                         <p className='openSans description mb-0'>
