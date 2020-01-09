@@ -1,0 +1,143 @@
+.divider {
+    overflow: hidden;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ED6A5A;
+}
+
+.divider:before,
+.divider:after {
+    background-color: #ED6A5A;
+    content: "";
+    display: inline-block;
+    height: 3px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.divider:before {
+    right: 1em;
+    margin-left: -50%;
+}
+
+.divider:after {
+    left: 1em;
+    margin-right: -50%;
+}
+
+.form {
+    background-color: transparent;
+    border-radius: 0;
+    color: white;
+    border: 1px solid white;
+
+}
+
+.form:focus {
+    background-color: transparent;
+    border-radius: 0;
+    color: white;
+    border: 1px solid white;
+    box-shadow: none;
+}
+
+.formLabel {
+    position: absolute;
+    pointer-events: none;
+    left: 1rem;
+    top: 0.5rem;
+    transition: 0.2s ease all;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.form:focus~.formLabel,
+.form:not(:focus):valid~.formLabel {
+    top: -0.6rem;
+    left: 1rem;
+    font-size: 0.8rem;
+    opacity: 1;
+    background-color: #1c1c1c;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.custom-control-label {
+    color: white;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    border-color: #ED6A5A;
+    background-color: #ED6A5A;
+}
+
+.custom-control-input:not(:disabled):active~.custom-control-label::before {
+    border-color: rgb(228, 163, 155);
+    background-color: rgb(228, 163, 155);
+}
+
+.custom-control-input:focus:not(:checked)~.custom-control-label::before {
+    border-color: rgb(228, 163, 155);
+    background-color: rgb(228, 163, 155);
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: none;
+}
+
+.form-control:disabled {
+    background-color: rgb(68, 68, 68);
+}
+
+.formLabel.disabled {
+    color: grey;
+}
+
+.buttonContact {
+    color: white;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #ED6A5A;
+    border: none;
+    transition: all 0.15s linear;
+}
+
+.buttonContact:hover {
+    background-color: rgb(212, 124, 112);
+}
+
+.buttonContact:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.messagesContainer {
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+/* Medium screen */
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    .messagesContainer {
+        max-height: 65vh;
+    }
+}
+
+/* Large screen */
+@media only screen and (width: 1440px) {
+    .messagesContainer {
+        max-height: 60vh;
+    }
+}
+
+.whiteCircle {
+    width: 256px;
+    position: absolute;
+    bottom: 0;
+    right: 25%;
+}

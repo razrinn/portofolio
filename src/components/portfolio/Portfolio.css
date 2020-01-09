@@ -23,7 +23,11 @@
 
 .buttonPortfolio:hover {
     background-color: rgb(184, 179, 173);
+}
 
+.buttonPortfolio:focus {
+    box-shadow: none;
+    outline: none;
 }
 
 .buttonPortfolio.active {
