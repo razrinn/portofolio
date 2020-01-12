@@ -12,6 +12,19 @@
     width: 100%;
 }
 
+.cardTitle {
+    min-height: 2.3em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardDescription {
+    text-align: justify;
+    min-height: 8em;
+}
+
 .buttonPortfolio {
     color: #0094C6;
     width: 100%;
@@ -35,6 +48,12 @@
     color: white;
 }
 
-.buttonPortfolio.active:disabled {
+.buttonPortfolio.active:hover {
+    background-color: rgb(0, 115, 153);
+    color: white;
+}
+
+.buttonPortfolio:disabled {
     color: grey;
+    background-color: lightgrey;
 }

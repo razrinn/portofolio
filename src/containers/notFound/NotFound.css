@@ -1,0 +1,15 @@
+.wrapperNotFound {
+    background-color: #ffffff;
+    height: 92vh;
+}
+
+.mainContentNotFound {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageNotFound {
+    height: 40vh;
+}

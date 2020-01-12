@@ -13,6 +13,14 @@
     color: #0094C6;
 }
 
+.mobileComingSoon {
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Medium screen */
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
     .comingSoonAsset {

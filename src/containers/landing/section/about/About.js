@@ -74,7 +74,7 @@ const About = () => {
                         date: 'June 2018 - August 2018',
                         place: 'OKK UI 2018',
                         title: 'Mentor',
-                        detail: 'Became a mentor for 16 new Universitas Indonesia students. Did a several sharing sessions.'
+                        detail: 'Became a mentor for 16 new Universitas Indonesia students. Did a several sharing sessions to give insights becoming UI student.'
                     },
                     {
                         date: 'June 2018 - November 2018',

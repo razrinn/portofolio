@@ -25,7 +25,7 @@ const Contact = () => {
             id: 1,
             fullName: 'John Doe',
             email: 'johndoe@mail.com',
-            message: 'Keren websitenya kak',
+            message: 'Good choice of colors ',
             // date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
             date: 'Thursday, January 9, 2020'
         },
@@ -33,7 +33,7 @@ const Contact = () => {
             id: 2,
             fullName: 'Jane Doe',
             email: 'janedoe@mail.com',
-            message: 'Masih suka bingung',
+            message: 'Very good UI, I like it.',
             // date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
             date: 'Thursday, January 9, 2020'
         },
@@ -52,7 +52,7 @@ const Contact = () => {
         {
             image: Website,
             alt: 'website-icon',
-            text: 'www.razrinn.tech'
+            text: 'razrinn.tech'
         },
         {
             image: Email,

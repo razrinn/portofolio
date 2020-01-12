@@ -11,8 +11,10 @@ const PortfolioCard = props => {
                     <Card.Img variant="top" src={props.imageUrl} />
                 </div>
                 <Card.Body>
-                    <Card.Title className='text-center'>{props.title}</Card.Title>
-                    <Card.Text className='text-justify'>
+                    <Card.Title className='cardTitle'>
+                        {props.title}
+                    </Card.Title>
+                    <Card.Text className='cardDescription'>
                         {props.description}
                     </Card.Text>
                     <Button
