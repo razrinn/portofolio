@@ -13,12 +13,31 @@ import Loader from 'react-loader-spinner';
 
 const Contact = () => {
 
+    const [isAnonymous, setIsAnonymous] = React.useState(false);
+
+    const [isCompleted, setIsCompleted] = React.useState(false);
+
     const [newMessage, setNewMessage] = React.useState({
         fullName: '',
         email: '',
         message: '',
-        date: ''
     });
+
+    React.useEffect(() => {
+        if (isAnonymous) {
+            setIsCompleted(newMessage.message !== '');
+        }
+        else {
+            if (newMessage.fullName !== '' && newMessage.email !== '' && newMessage.message !== '') {
+                if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(newMessage.email)) {
+                    setIsCompleted(true);
+                }
+            }
+            else {
+                setIsCompleted(false);
+            }
+        }
+    }, [newMessage, isAnonymous]);
 
     const [messages, setMessages] = React.useState([
         {
@@ -38,8 +57,6 @@ const Contact = () => {
             date: 'Thursday, January 9, 2020'
         },
     ]);
-
-    const [isAnonymous, setIsAnonymous] = React.useState(false);
 
     const [isSending, setIsSending] = React.useState(false);
 
@@ -80,11 +97,9 @@ const Contact = () => {
     const handleSend = () => {
         setIsSending(true);
         const msg = {
-            isAnonymous: isAnonymous,
             fullName: isAnonymous ? 'John Doe' : newMessage.fullName,
             email: isAnonymous ? 'johndoe@mail.com' : newMessage.email,
-            message: newMessage.message,
-            date: new Date()
+            message: newMessage.message
         }
         // TODO POST to API
     };
@@ -96,7 +111,6 @@ const Contact = () => {
             fullName: '',
             email: '',
             message: '',
-            date: ''
         });
     }
 
@@ -175,7 +189,7 @@ const Contact = () => {
                                         />
                                         <span className='formLabel'>Message</span>
                                     </Form.Group>
-                                    <button className='buttonContact' onClick={handleSend}>SEND</button>
+                                    <button className='buttonContact' disabled={!isCompleted} onClick={handleSend}>SEND</button>
                                 </>
                         }
                     </Col>
