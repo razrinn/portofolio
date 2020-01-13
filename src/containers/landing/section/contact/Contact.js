@@ -47,7 +47,7 @@ const Contact = () => {
     const [messages, setMessages] = React.useState([]);
 
     React.useEffect(() => {
-        axios.get('http://razrinn-core.herokuapp.com/api/v1/messages')
+        axios.get('https://razrinn-core.herokuapp.com/api/v1/messages')
             .then(res => setMessages(res.data.data))
             .catch(err => console.log(err));
     }, []);
@@ -94,7 +94,7 @@ const Contact = () => {
             email: isAnonymous ? 'johndoe@mail.com' : newMessage.email,
             message: newMessage.message
         }
-        axios.post('http://razrinn-core.herokuapp.com/api/v1/messages', msg)
+        axios.post('https://razrinn-core.herokuapp.com/api/v1/messages', msg)
             .then(setIsSending(true))
             .catch(err => console.log(err));
     };
