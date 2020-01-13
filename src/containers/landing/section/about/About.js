@@ -174,17 +174,16 @@ const About = () => {
                         </Col>
                         <Col md={3}>
                             <p className='text-white text-justify openSans'>
-                                Ray Azrin Karim is a 19-year-old law student whose life is dominated by solving the murder of his friend, Harmony Knight. Harmony was suffocated in 2012 and the killer was never brought to justice.
+                                Ray Azrin Karim is a 19-years-old information system student whose life is dominated by gadgets and technologies. It was in 5th grade when he started to like computer.
                                 <br />
-                                He is an Indonesia Muslim who defines himself as straight. He is currently at college. studying law.
                                 <br />
-                                Physically, Ray is in pretty good shape. He is average-height with light skin, red hair and brown eyes.
+                                He is a hard worker and a fast learner who really likes to find what's best for him. And as for right now, he really likes to do web development.
                                 <br />
-                                He grew up in a middle class neighbourhood. Having never really known his parents, he was raised in a series of foster homes.
                                 <br />
-                                He is currently single. His most recent romance was with a scientist called Mamie Cindy Lopez, who was 1 years older than him. They broke up because Mamie couldn't deal with Ray's obsession with Harmony's death.
+                                He even did some freelance projects with his team to gain more and more real-world working experience. His friends also play a big part in this stage of his life. Many of his friends supported him for what he's been doing, so nothing really could stop him from doing what he likes.
                                 <br />
-                                Ray's best friend is a law student called Hector Patel. They are inseparable. He also hangs around with a law student called Nathanael Hunt. They enjoy listening to music together.
+                                <br />
+                                He grew up in a loving family who support whatever things he like. So, he always feels confident when he does anything. Even though any hardships, he still keeps smiling.
                             </p>
                         </Col>
                     </Row>

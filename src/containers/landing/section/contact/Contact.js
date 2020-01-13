@@ -80,6 +80,7 @@ const Contact = () => {
     const handleSend = () => {
         setIsSending(true);
         const msg = {
+            isAnonymous: isAnonymous,
             fullName: isAnonymous ? 'John Doe' : newMessage.fullName,
             email: isAnonymous ? 'johndoe@mail.com' : newMessage.email,
             message: newMessage.message,
