@@ -9,6 +9,11 @@ import WhiteCircle from '../../../../assets/landing/contact/white-circle.svg';
 import ContactInfo from '../../../../components/contact/ContactInfo';
 import Message from '../../../../components/contact/Message';
 import Loader from 'react-loader-spinner';
+import axios from 'axios';
+
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.withCredentials = true
 
 
 const Contact = () => {
@@ -39,24 +44,13 @@ const Contact = () => {
         }
     }, [newMessage, isAnonymous]);
 
-    const [messages, setMessages] = React.useState([
-        {
-            id: 1,
-            fullName: 'John Doe',
-            email: 'johndoe@mail.com',
-            message: 'Good choice of colors ',
-            // date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-            date: 'Thursday, January 9, 2020'
-        },
-        {
-            id: 2,
-            fullName: 'Jane Doe',
-            email: 'janedoe@mail.com',
-            message: 'Very good UI, I like it.',
-            // date: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-            date: 'Thursday, January 9, 2020'
-        },
-    ]);
+    const [messages, setMessages] = React.useState([]);
+
+    React.useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/v1/messages')
+            .then(res => setMessages(res.data.data))
+            .catch(err => console.log(err));
+    }, []);
 
     const [isSending, setIsSending] = React.useState(false);
 
@@ -95,13 +89,14 @@ const Contact = () => {
     };
 
     const handleSend = () => {
-        setIsSending(true);
         const msg = {
             fullName: isAnonymous ? 'John Doe' : newMessage.fullName,
             email: isAnonymous ? 'johndoe@mail.com' : newMessage.email,
             message: newMessage.message
         }
-        // TODO POST to API
+        axios.post('http://127.0.0.1:8000/api/v1/messages', msg)
+            .then(setIsSending(true))
+            .catch(err => console.log(err));
     };
 
     const handleCloseSend = () => {
