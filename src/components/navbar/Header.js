@@ -22,7 +22,7 @@ const Header = () => {
                         {/* <Nav.Link href="/#about">ABOUT</Nav.Link>
                         <Nav.Link href="/#work">WORK</Nav.Link>
                         <Nav.Link href="/#contact">CONTACT</Nav.Link> */}
-                        <Nav.Link href="/blog">BLOG</Nav.Link>
+                        <Nav.Link href="#">BLOG</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
