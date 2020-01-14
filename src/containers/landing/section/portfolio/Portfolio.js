@@ -37,7 +37,7 @@ const Portfolio = () => {
             title: 'Personal Website',
             description: 'Developed this website from scratch. Built using Figma for design, ReactJS for front-end, and Django for back-end',
             isPrivate: false,
-            url: 'https://tokopedia-ai.cs.ui.ac.id',
+            url: 'https://razrinn.tech',
             imageUrl: 'https://i.ibb.co/StCnv0z/thisweb.png'
         },
         {
