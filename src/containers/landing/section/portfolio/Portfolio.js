@@ -9,6 +9,14 @@ import Loader from 'react-loader-spinner';
 const Portfolio = () => {
     const [portfolios, setPortfolios] = React.useState([
         {
+            id: 10,
+            title: 'Crona',
+            description: 'Developed Indonesia\'s Coronavirus Status front-end. Built using ReactJS',
+            isPrivate: false,
+            url: 'https://crona.razrinn.com',
+            imageUrl: 'https://i.ibb.co/GWmrqTK/crona.png'
+        },
+        {
             id: 1,
             title: 'Haer',
             description: 'Currently developing Human Resource Management System platform\'s front-end. Built using ReactJS',
